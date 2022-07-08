@@ -1,0 +1,168 @@
+#! /bin/bash
+
+# The MIT License (MIT)
+# Copyright (c) 2022 Emeer Adhamian (github.com/kode-trek)
+# https://github.com/kode-trek/mede/blob/main/LICENSE
+# https://github.com/kode-trek/archive/blob/main/LICENSE
+
+echo "-- MEDE --"
+
+if [[ "$1" == "--uninstall" ]]
+then
+ trap "exit" INT
+
+ sudo apt-get remove imagemagick -y
+ sudo apt-get remove ffmpeg -y
+ sudo apt-get remove recordmydesktop -y
+ sudo apt-get remove timidity -y
+ sudo apt-get install -f -y
+ sudo apt-get update -y
+
+ sudo rm -rf /usr/bin/mede-bin/
+ sudo rm -rf /usr/lib/mede/
+ sudo rm -rf /usr/bin/mede
+
+ sudo rm -rf /etc/ImageMagick-*/policy.xml
+ sudo cp lib/0-asset/policy-0.xml /etc/ImageMagick-6/policy.xml
+ sudo chmod 644 /etc/ImageMagick-6/policy.xml
+
+ if [[ -e ~/mede-asset ]]
+ then
+  echo "[WARNING] file(s) left behind: ~/mede-asset"
+ fi
+
+ read -n1 -r -p "press ANY-KEY to EXIT..." key
+ exit
+fi
+
+lab51cc 1>/dev/null 2>/dev/null
+if [[ "$?" > 0 ]]
+then
+ echo "[dependency] <lab51cc>"
+ echo "[contact] <github.com/kode-trek>"
+ read -n1 -r -p "press ANY-KEY to EXIT..." key
+ exit
+fi
+
+if [[ -e /usr/bin/mede ]]
+then
+ echo "[WARNING] file(s) found: /usr/bin/mede"
+ read -p "Continue? (Y/N): " confirm && [[ $confirm == [yY] ]] || exit 1
+fi
+
+trap "exit" INT
+
+sudo apt-get update -y
+sudo apt-get install imagemagick -y
+sudo apt-get install ffmpeg -y
+sudo apt-get install recordmydesktop -y
+sudo apt-get install timidity -y
+
+cd lib
+
+sudo rm -rf /etc/ImageMagick-*/policy.xml
+sudo cp 0-asset/policy-1.xml /etc/ImageMagick-6/policy.xml
+sudo chmod 644 /etc/ImageMagick-6/policy.xml
+
+sudo rm -rf /usr/bin/mede-bin/
+sudo rm -rf /usr/lib/mede/
+
+sudo mkdir /usr/bin/mede-bin/
+sudo mkdir /usr/lib/mede/
+sudo cp -r 0-asset/mede-asset/ /usr/lib/mede
+sudo chmod 755 /usr/lib/mede/mede-asset
+chmod 755 mede
+sudo cp mede /usr/bin/
+echo ""
+
+lab51cc help.cc
+sudo mv help_* /usr/bin/mede-bin/help
+echo ""
+
+lab51cc intro.cc
+sudo mv intro_* /usr/bin/mede-bin/intro
+echo ""
+
+lab51cc menu.cc
+sudo mv menu_* /usr/bin/mede-bin/menu
+echo ""
+
+cd 0-asset
+lab51cc main_sample.cc
+sudo mv main_sample_* /usr/bin/mede-bin/sample
+echo ""
+cd ..
+
+cd adds
+lab51cc main_adds.cc
+sudo mv main_adds_* /usr/bin/mede-bin/adds
+echo ""
+cd ..
+
+cd cdup
+lab51cc main_cdup.cc
+sudo mv main_cdup_* /usr/bin/mede-bin/cdup
+echo ""
+cd ..
+
+cd ceniv
+lab51cc main_ceniv.cc
+sudo mv main_ceniv_* /usr/bin/mede-bin/ceniv
+echo ""
+cd ..
+
+cd cropiv
+lab51cc main_cropiv.cc
+sudo mv main_cropiv_* /usr/bin/mede-bin/cropiv
+echo ""
+cd ..
+
+cd ena
+lab51cc main_ena.cc
+sudo mv main_ena_* /usr/bin/mede-bin/ena
+echo ""
+cd ..
+
+cd laud
+lab51cc main_laud.cc
+sudo mv main_laud_* /usr/bin/mede-bin/laud
+echo ""
+cd ..
+
+cd mergem
+lab51cc main_mergem.cc
+sudo mv main_mergem_* /usr/bin/mede-bin/mergem
+echo ""
+cd ..
+
+cd meta
+lab51cc main_meta.cc
+sudo mv main_meta_* /usr/bin/mede-bin/meta
+echo ""
+cd ..
+
+cd pubm
+lab51cc main_pubm.cc
+sudo mv main_pubm_* /usr/bin/mede-bin/pubm
+echo ""
+cd ..
+
+cd rotiv
+lab51cc main_rotiv.cc
+sudo mv main_rotiv_* /usr/bin/mede-bin/rotiv
+echo ""
+cd ..
+
+cd snap
+lab51cc main_snap.cc
+sudo mv main_snap_* /usr/bin/mede-bin/snap
+echo ""
+cd ..
+
+cd trimm
+lab51cc main_trimm.cc
+sudo mv main_trimm_* /usr/bin/mede-bin/trimm
+echo ""
+cd ../..
+
+read -n1 -r -p "press ANY-KEY to EXIT..." key
