@@ -1,0 +1,35 @@
+#! /bin/bash
+
+pt="$1"
+start="$2"
+stop="$3"
+ext="$4"
+aud="$5"
+
+if [[ -e "vid-1.""$ext" ]]
+then
+ echo "'vid-1.EXT' exist."
+ exit
+fi
+
+if [[ "$start" = "pub" ]]
+then
+ ffmpeg -i "$pt" -map 0:0 -map 0:a -map_metadata -1 -map_chapters -1 -strict experimental -c:a aac -async 1 "vid-1-PUB.mp4"
+fi
+
+if [[ "$pt" = "merge" ]]
+then
+ ffmpeg -f concat -safe 0 -i e -c copy out."$start"
+fi
+
+time ffmpeg -i "$pt" -ss "$start" -to "$stop" -acodec copy -vcodec copy -async 1 "vid-1.""$ext"
+
+if [[ "$aud" = "mute" ]]
+then
+ ffmpeg -i "vid-1.""$ext" -af "volume=0.0" -c:v copy "vid-1-M.""$ext"
+fi
+
+if [[ "$aud" = "icu" ]]
+then
+ ffmpeg -i "vid-1.""$ext" -vf drawbox=x=0:y=0:w=0:h=0:color=black@1:t=fill -map 0:0? -map 0:1? "vid-1-M.""$ext"
+fi
