@@ -1,0 +1,4 @@
+
+
+//	"[] ffmpeg -i " << quote(inp) << " -vf " << quote(box) << " -strict -2 " <<
+//	quote(out)

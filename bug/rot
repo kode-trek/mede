@@ -1,0 +1,8 @@
+//	string cmd1 = "ffmpeg -i " + as_is(inp) + " -vf " + as_is(rot) + \
+//	" -c:a aac -strict -2 " + as_is(out);
+
+
+
+//	"[] ffmpeg -i " << quote(inp) << " -vf " << quote(rot) <<
+//	" -c:a aac -strict -2 " << quote(out)
+

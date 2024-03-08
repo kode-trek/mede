@@ -1,0 +1,9 @@
+[eliminate meta-data]
+ffmpeg -i in.mkv -map_metadata -1 -c:v copy -c:a copy out.mkv
+
+[eliminate sub-title]
+ffmpeg -i in.mkv -vcodec copy -acodec copy -sn out.mkv
+
+example mix of both
+ffmpeg -i "Family.Guy.S05E01.1080p.WEB-DL.x265.SoftSub.DonyayeSerial.mkv" -map_metadata -1 -c:v copy -c:a copy -sn  "Family.Guy.S05E01.1080p.WEB-DL.x265.mkv"
+

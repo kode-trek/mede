@@ -1,0 +1,38 @@
+
+//"if [--dirty] very fast although result would not be promising.""\n"
+
+
+
+//	if (arg1 != "") {
+//		unsigned short int idx = strlen(arg1.c_str()) - 1;
+//		if (arg1[idx] != '/') inp = arg1 + "/";
+//		else inp = arg1;
+//	}
+//	if (empty(inp)) {
+//		cout << "directory is empty: " << uri(inp)[1] << endl;
+//		exit(1);
+//	}
+//	vector<string> l = tree(inp, false);
+//	string list = "";
+//	for (unsigned long long int i = 0; i < l.size(); i++)
+//		list += " -i " + quote(l[i]);
+//	string map = "";
+//	for (unsigned long long int i = 0; i < l.size(); i++)
+//		map += "[" + str(i) + ":v:0][" + str(i) + ":a:0]";
+//	string cmd1 = "ffmpeg " + list + " -filter_complex '" + map +
+//	" concat=n=" + str(l.size()) + ":v=1:a=1 [v][a]' -map '[v]' -map '[a]' "
+//	+ quote(out);
+//	string cmd2 = "ffmpeg -f concat -safe 0 -i " + lst_f + " -c copy " +
+//	quote(out);
+
+//vector<string> l = tree(inp, false);
+//string in = "";
+//for (int i = 0; i < l.size(); i++) in += " -i " + quote(l[i]);
+//string filter = "";
+//for (int i = 0; i < l.size(); i++)
+// filter += "[" + str(i) + ":v:0][" + str(i) + ":a:0]";
+//string cmd = "ffmpeg " + in + " -filter_complex '" + filter +
+//" concat=n=" + str(l.size()) + ":v=1:a=1 [v][a]' -map '[v]' -map '[a]' "
+//+ quote(v6);
+
+
