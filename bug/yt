@@ -1,0 +1,7 @@
+vid_name="https://www.youtube.com/watch?v=S7ik52jMXLc"
+echo `yt-dlp -e $vid_name`
+yt-dlp $vid_name -o"3. `yt-dlp -e $vid_name`"
+
+yt-dlp --write-comments --no-download "https://youtube.com/watch?v=XFFs1RoNgAU"
+yt-dlp --write-subs 'youtube.com/watch?v=X-sRW19wBvU' -- --sub-langs
+

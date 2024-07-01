@@ -1,0 +1,48 @@
+
+
+//cmd + "creates " + quote(v7) + " which consists:" + "\n" +
+
+//  "code-line(s) in " + quote(v7) + ":\n" + v8
+
+//		<< quote(out) << "\n"
+//		"[...] establishes <*player*.htm> with the following codes inside:" "\n" <<
+//		vid_play_htm
+
+		"[...] establishes <*player*.htm> with the following codes inside:" "\n" <<
+
+
+ if (v2[3] == 1) { // 1-video (muted-video)
+
+ if (v2[3] == 2) { // 1-audio (music or recoreded-voice)
+
+
+  v3 + "mede pubm <inp-med> [<vid>=0] [<aud>=0]""\n"
+  "converts <inp-med> to <out-vid.MP4> or <out-aud.MP3>. produces "
+  "<out-player.HTM> with <out-med> (.MP4|.MP3) referred.""\n"
+
+  "if [multi-channel] enlists all streams in media.""\n"
+
+  v3 + "mede pubm <inp-med> [<vid>=0] [<aud>=0]""\n"
+  "converts <inp-med> to <out-vid.MP4> or <out-aud.MP3>. produces "
+  "<out-player.HTM> with <out-med> (.MP4|.MP3) referred.""\n"
+  "if [multi-channel] enlists all streams in media.""\n"
+
+
+		"[PATTERN] medp pubm <inp-med>""\n"
+		"if [multi-channel] enlists all included video(s), audio(s), subtitle(s) tracks.""\n"
+		"if [mono-channel] converts <inp-med> to <out-vid.MP4> or <out-aud.MP3>.""\n"
+		"\n"
+		"[PATTERN] medp pubm <inp-med> [<vid>=0] [<aud>=0]""\n"
+		"maps '0:vid' and '0:aud' of <inp-med> to <out-med.MP4>.""\n"
+		"produces <out-player.HTM> with <out-med.MP4> referred.""\n"
+		"\n"
+		"[EXAMPLE] medp pubm 'my-vid.avi' '0' '2'""\n"
+		"maps '0:0' video-track and '0:2' audio-track of 'my-vid.avi'""\n"
+		"to 'my-vid_published_*.mp4' referred in 'my-vid_player_*.htm'.""\n"
+		"\n"
+		"[EXAMPLE] medp pubm 'my-music.ogg'""\n"
+		"converts mono-channel 'my-music.ogg' to 'my-music_sound_*.mp3'.""\n"
+		"produces 'my-music_player_*.htm' for it."
+
+		cout << "produces <player.HTM> along with <out-med.MP4> embedded.";
+

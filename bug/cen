@@ -1,0 +1,12 @@
+"[...] censors parts of video." "\n"
+
+"[] ffmpeg -i " << quote(inp) << " -vf " << quote(box) << " -strict -2 " <<
+quote(out)
+
+"tells video's aspect-ratio."
+
+		disp("drawing black-filled box...");
+	disp("drawing color-filled box...");
+	cout << "[OK] some parts of video censored." << endl;
+	
+		"[] censoring parts of video...";
