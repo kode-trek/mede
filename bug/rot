@@ -1,0 +1,18 @@
+		cout << "rotates <inp-vid> to specified <dir>. produces ";
+		cout << "<out-vid.MP4>." << endl << "<dir>ections:" << endl;
+
+
+
+
+//	"[...] rotates video." "\n"
+//	"[] ffmpeg -i " << quote(inp) << " -vf " << quote(rot) <<
+//	" -c:a aac -strict -2 " << quote(out)
+
+//	string cmd1 = "ffmpeg -i " + as_is(inp) + " -vf " + as_is(rot) + \
+//	" -c:a aac -strict -2 " + as_is(out);
+
+
+
+//	"[] ffmpeg -i " << quote(inp) << " -vf " << quote(rot) <<
+//	" -c:a aac -strict -2 " << quote(out)
+

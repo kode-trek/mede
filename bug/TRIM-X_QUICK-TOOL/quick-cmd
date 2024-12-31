@@ -1,0 +1,17 @@
+[TRIM]
+ffmpeg -ss 0 -to 5:18 -i "main.mp4" -acodec copy -vcodec copy -async 1 "vid-1.mp4"
+
+[MUTE]
+ffmpeg -i "vid-1.mp4" -af "volume=0.0" -c:v copy "vid-1-M.mp4"
+
+[PUB]
+ffmpeg -i "vid-1.mp4" -map 0:0 -map 0:a -map_metadata -1 -map_chapters -1 -strict experimental -c:a aac -async 1 "vid-1-P.mp4"
+
+[MERGE]
+[e-file]
+file 'vid-1-P.mp4'
+file 'vid-2-P.mp4'
+file 'vid-3-P.mp4'
+file 'vid-4-P.mp4'
+[cmd]
+ffmpeg -f concat -safe 0 -i "e-file" -c copy "OUT.mp4"

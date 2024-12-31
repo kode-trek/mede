@@ -1,0 +1,9 @@
+ffmpeg -ss 02:29:10 -t 0:20:0 -i _3.mp4 -acodec copy -vcodec copy -async 1 _3_cut_4.mp4
+
+//"[] ffmpeg -i " << quote(inp) <<
+//"-strict experimental -c:a aac -async 1 -ss " << quote(t1) << " -to " <<
+//quote(t2) << " " << quote(out)
+
+// media_info med = imed(v1);
+// for (int i = 0; i < med.nstream; i++) v4 += " -map 0:" + str(i) + "?";
+
