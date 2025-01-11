@@ -1,0 +1,23 @@
+#include "heads-up.h"
+#include "proc_caud.hpp"
+#include "sim_caud.hpp"
+int main(int argc, char* argv[]) {
+	if ((string) argv[1] == "") {
+		cout << "no argument(s) supplied." << endl;
+		cout << "medp caud --help" << endl;
+		exit(1);
+	}
+	if ((string) argv[1] == "--help") {
+		cout << "-- (c)ompress (aud)io --" << endl;
+		cout << "extracts sound from video." << endl;
+		cout << "excludes wind-noise from recorded meeting-voice." << endl;
+		cout << endl;
+		cout << "[PATTERN] medp caud <inp-med> [--squeez]" << endl;
+		cout << "converts <inp-med> to <out-aud.MP3>." << endl;
+		cout << "if [--squeez] provided, degrades quality of <inp-med> to ";
+		cout << "<out-aud.MP3>." << endl;
+		exit(1);
+	}
+	if ((string) argv[1] == "--sim") {sim_caud(argv[2], argv[3]);}
+	proc_caud(argv[1], argv[2]);
+}

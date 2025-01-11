@@ -1,0 +1,86 @@
+#! /bin/bash
+
+# The MIT License (MIT)
+# Copyright (c) 2024 Emeer Adhamian (github.com/kode-trek)
+# https://raw.githubusercontent.com/kode-trek/mede/main/LICENSE
+
+# sample
+if [[ "$1" == "sample" ]]
+then
+ /usr/bin/mede-bin/sample
+ exit
+fi
+# cen
+if [[ "$1" == "cen" ]]
+then
+ /usr/bin/mede-bin/cen "$2" "$3" "$4" "$5" "$6" "$7" "$8"
+ exit
+fi
+# crop
+if [[ "$1" == "crop" ]]
+then
+ /usr/bin/mede-bin/crop "$2" "$3" "$4" "$5" "$6" "$7"
+ exit
+fi
+# laud
+if [[ "$1" == "laud" ]]
+then
+ /usr/bin/mede-bin/laud "$2" "$3" "$4" "$5"
+ exit
+fi
+# merge
+if [[ "$1" == "merge" ]]
+then
+ /usr/bin/mede-bin/merge "$2" "$3"
+ exit
+fi
+# meta
+if [[ "$1" == "meta" ]]
+then
+ /usr/bin/mede-bin/meta "$2" "$3"
+ exit
+fi
+# pub
+if [[ "$1" == "pub" ]]
+then
+ /usr/bin/mede-bin/pub "$2" "$3" "$4" "$5"
+ exit
+fi
+# rot
+if [[ "$1" == "rot" ]]
+then
+ /usr/bin/mede-bin/rot "$2" "$3" "$4"
+ exit
+fi
+# snap
+if [[ "$1" == "snap" ]]
+then
+ /usr/bin/mede-bin/snap "$2" "$3" "$4" "$5"
+ exit
+fi
+# sub
+if [[ "$1" == "sub" ]]
+then
+ /usr/bin/mede-bin/sub "$2" "$3" "$4" "$5"
+ exit
+fi
+# trim
+if [[ "$1" == "trim" ]]
+then
+ /usr/bin/mede-bin/trim "$2" "$3" "$4" "$5" "$6"
+ exit
+fi
+# help
+if [[ "$1" == "--help" ]]
+then
+ /usr/bin/mede-bin/help
+ exit
+fi
+# command-list
+if [[ "$1" == "cmd" ]]
+then
+ /usr/bin/mede-bin/menu
+ exit
+fi
+# intro
+ /usr/bin/mede-bin/intro

@@ -1,0 +1,8 @@
+1
+00:00:02,000 --> 00:00:10,000
+this line stays here for 8 seconds.
+
+2
+00:00:11,000 --> 00:00:16,000
+this one echoes in
+<font color="#d81d1d">red</font> & <font color="#138ce9">blue.</font>

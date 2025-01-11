@@ -1,0 +1,80 @@
+	cout << " also degrades quality." << endl;
+	cout << "[] " << "ffmpeg -i " + as_is(inp) + " -map 0:1 " + \
+	"-vf tblend=all_mode=grainextract -map_metadata -1 " + \
+	"-map_chapters -1 -acodec libmp3lame -b:a 8k -ac 1 -ar 11025 " + \
+	as_is(out) << endl;
+
+
+* it adds hard-sub, how about float-sub?
+* check all sim files.
+* use mime to identify extensions in separate function that probably needs
+  checking for write-access.
+* youtube-dl
+* voice-music separate
+
+https://sakhtafzarmag.com/%d8%b3%d8%a7%d8%ae%d8%aa-gif%d8%af%d8%b1%d8%aa%d9%84%da%af%d8%b1%d8%a7%d9%85/
+https://stackoverflow.com/questions/45068155/stream-specifier-v0-in-filtergraph-description-1v0-1a0-2v0-2a
+http://manpages.ubuntu.com/manpages/trusty/man1/dcmj2pnm.1.html
+https://askubuntu.com/questions/457604/bulk-converting-images-from-one-format-to-another
+https://stackoverflow.com/questions/46366150/create-muted-video-and-black-screen-video-with-ffmpeg
+https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line
+http://www.cccp-project.net/
+https://y2mate.tools/
+https://write.corbpie.com/how-to-download-videos-of-websites-with-ffmpeg/
+http://www.pitivi.org/
+https://www.openshot.org/
+http://avidemux.sourceforge.net/
+https://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
+
+extracts the related thumbnails to a directory
+produces a HTML report to preview these thumbnails through browser:
+$> vinetto -Ho /tmp/vinetto_output /path/to/Thumbs.db
+
+vinetto Thumbs.db -o t
+
+./q_1646704254.out `ffmpeg -i ~/Downloads/Ejen\ Ali\ The\ Movie\ 2019.mp4 2>&1 | grep -oP 'Stream .* Video' | grep -c Video`
+where inside q.cc:
+int main(int argc, char* argv[]) {if (argc > 1) cout << argv[1] << endl;}
+
+
+
+possible failed:
+no-extension
+unknown-stream
+too-large (high-quality-4k)
+
+
+* check all sim files.
+* use mime to identify extensions in separate function that probably needs
+  checking for write-access.
+* check "phrase" or 'c' character in string? for lab51 we need a method.
+  revise relevant part in mergem_proc
+* naming ex. rotiv --> rot
+
+https://sakhtafzarmag.com/%d8%b3%d8%a7%d8%ae%d8%aa-gif%d8%af%d8%b1%d8%aa%d9%84%da%af%d8%b1%d8%a7%d9%85/
+https://stackoverflow.com/questions/45068155/stream-specifier-v0-in-filtergraph-description-1v0-1a0-2v0-2a
+http://manpages.ubuntu.com/manpages/trusty/man1/dcmj2pnm.1.html
+https://askubuntu.com/questions/457604/bulk-converting-images-from-one-format-to-another
+https://stackoverflow.com/questions/46366150/create-muted-video-and-black-screen-video-with-ffmpeg
+https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line
+http://www.cccp-project.net/
+https://write.corbpie.com/how-to-download-videos-of-websites-with-ffmpeg/
+https://y2mate.tools/
+http://www.pitivi.org/
+https://www.openshot.org/
+http://avidemux.sourceforge.net/
+https://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
+
+extracts the related thumbnails to a directory
+produces a HTML report to preview these thumbnails through browser:
+$> vinetto -Ho /tmp/vinetto_output /path/to/Thumbs.db
+
+vinetto Thumbs.db -o t
+
+./q_1646704254.out `ffmpeg -i ~/Downloads/Ejen\ Ali\ The\ Movie\ 2019.mp4 2>&1 | grep -oP 'Stream .* Video' | grep -c Video`
+where inside q.cc:
+int main(int argc, char* argv[]) {if (argc > 1) cout << argv[1] << endl;}
+
+convert mid midi to mp3
+timidity 19_01_bgm.mid -Ow -o - | ffmpeg -i - -acodec libmp3lame -ab 64k output_file.mp3
+

@@ -1,0 +1,27 @@
+telegram issuies a muted (dirty-muted) video as a GIF file.
+https://sakhtafzarmag.com/%d8%b3%d8%a7%d8%ae%d8%aa-gif%d8%af%d8%b1%d8%aa%d9%84%da%af%d8%b1%d8%a7%d9%85/
+compare the outcomes
+
+concat media files in different aspect-ratios
+https://stackoverflow.com/questions/45068155/stream-specifier-v0-in-filtergraph-description-1v0-1a0-2v0-2a
+
+convert DICOM files to JPEG images
+http://manpages.ubuntu.com/manpages/trusty/man1/dcmj2pnm.1.html
+example
+https://www.rubomedical.com/dicom_files/
+
+mogrify -format png /path/*.jpg
+https://askubuntu.com/questions/457604/bulk-converting-images-from-one-format-to-another
+
+mute/icu
+https://stackoverflow.com/questions/46366150/create-muted-video-and-black-screen-video-with-ffmpeg
+
+https://askubuntu.com/questions/648603/how-to-create-an-animated-gif-from-mp4-video-via-command-line
+
+convert mid midi to mp3
+timidity 19_01_bgm.mid -Ow -o - | ffmpeg -i - -acodec libmp3lame -ab 64k output_file.mp3
+
+extracts the related thumbnails to a directory
+produces a HTML report to preview these thumbnails through browser:
+$> vinetto -Ho /tmp/vinetto_output /path/to/Thumbs.db
+$> vinetto Thumbs.db -o t

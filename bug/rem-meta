@@ -1,0 +1,91 @@
+
+	string cmd2 = "ffmpeg -i " + quote(inp) + " -map 0:" + aud +
+	" -vf tblend=all_mode=grainextract -map_metadata -1 -map_chapters -1" +
+	" -acodec libmp3lame -b:a 8k -ac 1 -ar 11025 " + quote(out);
+
+
+
+
+
+		cout << "[WARNING] media is an audio-type. not able to get muted." << endl;
+
+		cout << "[WARNING] media is already muted." << endl;
+
+
+		cout << "[WARNING] no video-track found in media to get eliminated." << endl;
+
+
+
+		"[...] displays audio stream(s)." "\n"
+
+	if (op == "--squeeze") {
+		cout <<
+		"[...] converts <inp-med> to <out-aud.MP3> and degrads quality." "\n"
+		"[] ffmpeg -i " << quote(inp) << " -map 0:" << aud <<
+		" -vf tblend=all_mode=grainextract -map_metadata -1 -map_chapters -1"
+		" -acodec libmp3lame -b:a 8k -ac 1 -ar 11025 " << quote(out)
+		<< endl;
+
+		"[...] removes sound from <inp-med>." "\n"
+
+
+vector<string> aspect_ratio(string arg1) {
+ /* variable(s)
+ [v1] input
+ [v2] width
+ [v3] height
+ [v4] temporary-text-file
+ [v5] text-in-[v4]
+ [v6] aspect-ratio
+ */
+ string v1 = arg1;
+ string v2, v3 = "0";
+ string v4 = "." + ts();
+ string v5 = "";
+ vector<string> v6 = {};
+ // command(s)
+ int e = 0;
+ string cmd1 =
+ "ffmpeg -i " + quote(v1) + R"( 2>&1 | grep -oP 'Stream .*, \K[0-9]+x[0-9]+')";
+ // op(s)
+ e = sys(cmd1 + " 1>/dev/null");
+ if (not e) {
+  sys(cmd1 + " > " + v4);
+  v5 = cat(v4).txt;
+  v6 = split(v5.substr(0, v5.size() - 1), "x");
+  rm(v4);
+  try {v2 = v6[0];} catch (...) {v2 = "0";}
+  try {v3 = v6[1];} catch (...) {v3 = "0";}
+  return {v2, v3};
+ }
+ return {"0", "0"};
+}
+
+ string cmd4 =
+ "ffmpeg -i " + quote(v2) + " -vf drawbox=x=0:y=0"
+ ":w=" + aspect_ratio(v2)[0] + ":h=" + aspect_ratio(v2)[1] +
+ ":color=black@1:t=fill -map 0:" + v7 + " " + quote(v8);
+
+
+
+ string cmd6 = "echo `file -b --mime-type " + quote(v2) + "` > " + v9;
+ string cmd7 = "timidity " + quote(v2) +
+ " -Ow -o - 2>/dev/null | ffmpeg -i - -acodec libmp3lame -ab 64k " + quote(v8);
+
+
+
+
+
+
+
+  if ((cat(v9).txt).substr(0, (cat(v9).txt).size() - 1) == "audio/midi") {
+
+[eliminate meta-data]
+ffmpeg -i in.mkv -map_metadata -1 -c:v copy -c:a copy out.mkv
+
+[eliminate sub-title]
+ffmpeg -i in.mkv -vcodec copy -acodec copy -sn out.mkv
+
+example mix of both
+ffmpeg -i "Family.Guy.S05E01.1080p.WEB-DL.x265.SoftSub.DonyayeSerial.mkv" -map_metadata -1 -c:v copy -c:a copy -sn  "Family.Guy.S05E01.1080p.WEB-DL.x265.mkv"
+

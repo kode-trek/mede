@@ -1,0 +1,21 @@
+		cout << "converts <inp-vid> to <out-vid.MP4> with no sound." << endl;
+
+
+//		cout << "[PATTERN] medp caud <inp-med] [--squeez]" << endl;
+//		cout << "converts <inp-med] to <out-aud.MP3]." << endl;
+//		cout << "if [--squeez] provided, degrades quality of <inp-med] to ";
+//		cout << "<out-aud.MP3]." << endl;
+
+//		"\n"
+//		"[EXAMPLE] medp laud 'my-rec.wav' '--squeeze'""\n"
+//		"compresses 'my-rec.wav'. attempts to omit wind-noise."
+
+
+
+//		cout << "excludes wind-noise from recorded meeting-voice." << endl;
+//attempts to omit wind-noise.
+
+//	cmd1 = "ffmpeg -i " + as_is(inp) + " -map 0:1" + \
+//	" -vf tblend=all_mode=grainextract -map_metadata -1 -map_chapters -1 " + \
+//	"-acodec libmp3lame -b:a 8k -ac 1 -ar 11025 " + as_is(out);
+//degrades quality

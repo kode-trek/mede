@@ -1,0 +1,9 @@
+	disp("[] cropping <inp-vid>...");
+
+	cmd = "ffmpeg -i " + as_is(inp) + " -filter:v crop=" + box + " -c:a aac " + \
+	"-strict -2 " + as_is(out);
+
+	cout << "[OK] video is cropped." << endl;
+
+//	"[] ffmpeg -i " << quote(inp) << " -filter:v crop=" << box <<
+//	" -c:a aac -strict -2 " << quote(out)

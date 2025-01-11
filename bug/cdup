@@ -1,0 +1,14 @@
+// v1["cdup"] = "\t""clusters file(s) into multiple group(s).";
+
+// v1["ena"] = "\t""renames/enumerates file(s).";
+
+// "\t\t""excludes wind-noise from recorded meeting-voice.""\n"
+
+//	"\t\t""degrades quality of JPEG (JPG).""\n"
+
+//  "converts MIDI to MP3.""\n"
+
+	"\t\t""excludes wind-noise from recorded meeting-voice.""\n"
+
+	"\t\t""degrades quality of JPEG (JPG).""\n"
+
